@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NẠP KC — Kim Cương</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#020712;color:#eef7ff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+radial-gradient(circle at 15% 15%,#063c80 0,transparent 28%),
+radial-gradient(circle at 85% 30%,#092d67 0,transparent 30%),
+linear-gradient(145deg,#01040a,#041226 48%,#02050b)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.22;background-image:
+linear-gradient(rgba(41,147,255,.12) 1px,transparent 1px),
+linear-gradient(90deg,rgba(41,147,255,.12) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}
+.header{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid #158cff66;background:#020814dd;backdrop-filter:blur(14px);position:sticky;top:0;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}.logo .gem{font-size:40px;filter:drop-shadow(0 0 14px #20a8ff)}.logo b{font-size:28px;color:#fff}.logo span{display:block;font-size:11px;color:#54c6ff;letter-spacing:2px}
+.login{border:1px solid #168fff;border-radius:22px;padding:10px 20px;color:#dff5ff;background:#061a34;box-shadow:0 0 18px #087cff33;font-weight:700}
+.hero{max-width:1400px;margin:auto;min-height:310px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:35px 6vw;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);background:#0d8cff55}.hero:before{width:250px;height:250px;left:-80px;top:20px}.hero:after{width:300px;height:300px;right:-100px;bottom:-140px}
+.hero h2{font-size:20px;letter-spacing:3px;margin:0 0 8px}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:0;text-transform:uppercase;font-style:italic;font-weight:950;text-shadow:0 0 24px #09f}
+.hero p{font-size:16px;color:#a9c9e8;letter-spacing:2px}.character{height:270px;display:flex;align-items:center;justify-content:center;position:relative}
+.character .orb{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#65d6ff 0 5%,#0b7bdb 22%,#041a42 60%,transparent 70%);box-shadow:0 0 70px #087fff88}
+.character .person{position:absolute;font-size:150px;filter:drop-shadow(0 0 20px #0aaaff);transform:translateY(-8px)}
+.panel{max-width:1400px;margin:18px auto;padding:0 2vw}.panel-head{height:82px;border:1px solid #159aff;border-radius:22px 22px 5px 5px;background:linear-gradient(100deg,#061a36,#07152a);display:flex;align-items:center;padding:0 28px;gap:16px;box-shadow:0 0 28px #078bff22 inset}
+.panel-head .icon{font-size:42px;filter:drop-shadow(0 0 12px #16aaff)}.panel-head h2{margin:0;font-size:34px;font-style:italic;text-transform:uppercase}.panel-head p{margin:0 0 0 10px;color:#79cfff}
+.grid{border:1px solid #138dff;border-top:0;padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:#031027aa;border-radius:0 0 22px 22px}
+.card{min-height:285px;border:1px solid #158fff;border-radius:17px;background:linear-gradient(145deg,#071d3d,#020a19 70%);position:relative;padding:18px;text-align:center;overflow:hidden;box-shadow:inset 0 0 30px #087cff16,0 0 14px #087cff12;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:inset 0 0 35px #087cff25,0 0 25px #087cff35}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,#fff1,transparent 20%,transparent 70%,#0af1);pointer-events:none}
+.badge{position:absolute;right:0;top:0;background:#16baff;color:#001323;padding:7px 17px;font-weight:900;border-radius:0 15px 0 15px;font-size:12px}
+.gem-art{height:130px;display:grid;place-items:center;font-size:82px;filter:drop-shadow(0 0 20px #08f);position:relative}
+.gem-art:after{content:"";position:absolute;width:130px;height:45px;background:#0a8dff33;filter:blur(18px);bottom:15px;border-radius:50%}
+.amount{font-size:29px;font-weight:950;font-style:italic;letter-spacing:1px}.buy{display:block;width:100%;margin-top:10px;padding:10px 14px;border:0;border-radius:12px;background:linear-gradient(90deg,#087dff,#19c8ff);color:#fff;font-weight:900;font-size:16px;letter-spacing:.5px;box-shadow:0 0 18px #078dff55;cursor:pointer;transition:.2s}.buy:hover{transform:translateY(-2px);box-shadow:0 0 25px #078dff99}.price{display:inline-block;margin-top:7px;padding:8px 30px;border:1px solid #159aff;border-radius:22px;min-width:150px;color:#62d0ff;font-size:21px;font-weight:900;background:#041630}
+.vip{margin-top:22px}.vip .panel-head{border-color:#806cff;background:linear-gradient(100deg,#17103c,#080d25)}.vip .panel-head .icon{filter:drop-shadow(0 0 12px #9b5cff)}.vipgrid{border:1px solid #806cff;border-top:0;border-radius:0 0 22px 22px;padding:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;background:#09091faa}
+.ticket{border:1px solid #806cff;border-radius:17px;background:linear-gradient(145deg,#151133,#06091a);padding:22px 14px;text-align:center;min-height:205px;display:flex;flex-direction:column;justify-content:center;box-shadow:inset 0 0 30px #814cff12}
+.ticket .ticketicon{font-size:60px;margin-bottom:8px;filter:drop-shadow(0 0 13px #a45cff)}.ticket h3{margin:4px 0;font-size:17px}.ticket strong{font-size:21px;color:#ffd76a}
+.footer{max-width:1400px;margin:24px auto 0;padding:22px 5vw 35px;display:flex;justify-content:space-around;gap:20px;border-top:1px solid #0b75c966;color:#73b9e8;text-align:center}.footer b{display:block;color:#e9f8ff}.footer div{flex:1}
+@media(max-width:800px){.header{height:66px;padding:0 18px}.logo .gem{font-size:30px}.logo b{font-size:21px}.logo span{font-size:8px}.login{padding:8px 13px;font-size:13px}.hero{grid-template-columns:1fr;min-height:300px;text-align:center;padding:28px 18px}.character{height:110px}.character .person{font-size:85px}.character .orb{width:110px;height:110px}.panel{padding:0 10px}.panel-head{height:auto;min-height:72px;padding:14px 16px}.panel-head h2{font-size:24px}.panel-head p{display:none}.grid{grid-template-columns:repeat(2,1fr);padding:12px;gap:10px}.card{min-height:230px;padding:10px}.gem-art{height:100px;font-size:60px}.amount{font-size:22px}.price{font-size:16px;min-width:120px;padding:6px 14px}.vipgrid{grid-template-columns:repeat(2,1fr);padding:12px;gap:10px}.ticket{min-height:175px;padding:12px}.ticket .ticketicon{font-size:45px}.footer{display:grid;grid-template-columns:1fr 1fr;padding:18px}.hero h1{font-size:45px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.amount{font-size:20px}.card{min-height:220px}.badge{font-size:9px;padding:5px 9px}.vipgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><div class="gem">💎</div><div><b>NẠP KC</b><span>SHOP KIM CƯƠNG</span></div></div>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>NẠP KIM CƯƠNG</h2>
+    <h1>NHANH · AN TOÀN<br>GIÁ TỐT</h1>
+    <p>✦ NẠP NHANH &nbsp; • &nbsp; UY TÍN &nbsp; • &nbsp; HỖ TRỢ</p>
+  </div>
+  <div class="character"><div class="orb"></div><div class="person">🧙🏻‍♂️</div></div>
+</section>
+
+<section class="panel">
+  <div class="panel-head"><div class="icon">💎</div><h2>Kim Cương</h2><p>Nạp kim cương — Sở hữu mọi thứ bạn muốn!</p></div>
+  <div class="grid">
+    <article class="card"><div class="gem-art">💎</div><div class="amount">25 KC</div><div class="price">4.400đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="card"><span class="badge">PHỔ BIẾN</span><div class="gem-art">💎💎</div><div class="amount">51 KC</div><div class="price">8.800đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="card"><div class="gem-art">💎📦</div><div class="amount">113 KC</div><div class="price">17.600đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="card"><span class="badge">PHỔ BIẾN</span><div class="gem-art">💎📦</div><div class="amount">283 KC</div><div class="price">44.000đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="card"><div class="gem-art">💎📦</div><div class="amount">1.132 KC</div><div class="price">176.000đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="card"><div class="gem-art">💎📦</div><div class="amount">2.830 KC</div><div class="price">440.000đ</div><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+  </div>
+</section>
+
+<section class="panel vip">
+  <div class="panel-head"><div class="icon">🎫</div><h2>Thẻ Ưu Đãi</h2><p>Tiết kiệm hơn — Nhận nhiều hơn</p></div>
+  <div class="vipgrid">
+    <article class="ticket"><div class="ticketicon">👑</div><h3>THẺ VIP TUẦN</h3><strong>10.560đ</strong><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="ticket"><div class="ticketicon">🎟️</div><h3>THẺ TUẦN</h3><strong>44.000đ</strong><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="ticket"><div class="ticketicon">💜</div><h3>THẺ BOOYAH</h3><strong>48.400đ</strong><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+    <article class="ticket"><div class="ticketicon">👑</div><h3>THẺ THÁNG</h3><strong>195.600đ</strong><button class="buy" onclick="window.open('https://t.me/binnapgame', '_blank')">🛒 MUA NGAY</button></article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>🛡️<b>AN TOÀN</b>Bảo mật thông tin</div>
+  <div>⚡<b>NHANH CHÓNG</b>Nạp KC nhanh chóng</div>
+  <div>💎<b>GIÁ TỐT</b>Ưu đãi hấp dẫn</div>
+</footer>
+<script>
+function buyPackage(btn){
+  const card = btn.closest('.card,.ticket');
+  const name = card.querySelector('.amount,.ticket h3')?.textContent.trim() || 'sản phẩm';
+  const price = card.querySelector('.price,.ticket strong')?.textContent.trim() || '';
+  alert('Bạn đã chọn ' + name + (price ? ' — ' + price : '') + '\n\nChức năng thanh toán có thể tích hợp tiếp.');
+}
+</script>
+</body>
+</html>
